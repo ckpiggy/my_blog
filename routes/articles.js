@@ -3,7 +3,6 @@ var express = require('express'),
     Article = require('../models/Article');
 
 router.get('/', function(req, res, next) {
-    // console.log('get article');
     Article.find(function(err, articles){
         if(err){
             res.json(err);
@@ -24,7 +23,6 @@ router.get('/:id', function(req, res, next){
 });
 
 router.post('/',function(req, res){
-    // console.log(req.body);
     Article.create(req.body, function(err, article){
        if(err){
            res.json(err);
